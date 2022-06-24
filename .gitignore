@@ -2,6 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=python
 data/
 legal_copilot/bla.py
+cdk.out/
 .env
 ### Python ###
 # Byte-compiled / optimized / DLL files
