@@ -32,9 +32,9 @@ jobs:
       - name: Build docker image
         run: docker build . -t image:test
       
-      - name: Smoke test docker image
+      - name: Test docker image
         run: |
-          docker run -p -rm -d --name server 5000:5000 test
+          docker run -rm -d --name server -p 5000:5000 test
           sleep 5
           curl --fail localhost:5000
           pytest test
