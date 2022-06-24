@@ -2,52 +2,35 @@ import styled from '@emotion/styled'
 import { Button, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
-
-const API_URL = "https://legal-worker.pollinations.ai/legal"
-
+import Footer from './components/Footer';
+import { NDA, NDA_TRANSLATED } from './assets/texts.js'
+import fetchTranslation from './network';
 
 function App() {
 
-  const [original_text, setOriginalText] = useState('')
-  const [translated_text, setTranslatedText] = useState('')
+  const [original_text, setOriginalText] = useState(NDA)
+  const [translated_text, setTranslatedText] = useState(NDA_TRANSLATED)
 
   async function onSubmit() {
-    try {
-      const response = await fetch(
-          API_URL, { 
-          method: "POST",
-          mode: 'cors',
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            "original": original_text
-          })
-        }
-      );
-      const data = await response.json();
-      setTranslatedText(data?.simple)
-      // console.log("json response", data)
-      return data
-    } catch (error) {
-      // console.log("fetch error", error)
-      return error
-    }
+    const response = await fetchTranslation(original_text)
+    setTranslatedText(response?.simple)
   }
 
 
   return (
+    <>
     <Container>
       <Grid>
-          
         <GridItem>
-          <Typography variant='h3' children='Legalese'/>
+          <Typography variant='h4' children='your legal nonsense:'/>
           <TextField
             id="legalese-text"
+            autoFocus
             multiline
             variant='filled'
             rows={15}
             fullWidth
+            value={original_text}
             onChange={(e) => setOriginalText(e.target.value)}
           />
           <Button 
@@ -57,21 +40,33 @@ function App() {
             onClick={onSubmit}/>
         </GridItem>
         <GridItem>
-          <Typography variant='h3' children='Real life language'/>
-          <TextField
-            id="translated-text"
-            multiline
-            variant='filled'
-            rows={15}
-            fullWidth
-            value={translated_text}
-            disabled
-          />
+          <EmptyItem title={<>what does it <i>actually</i> means:</>} value={translated_text}/>
         </GridItem>         
       </Grid>
+      <Footer/>
     </Container>
+  </>
   );
 }
+
+const EmptyItem = props => {
+
+  return <>
+    <Typography variant='h4' children={props.title}/>
+      <TextField
+        id="translated-text"
+        multiline
+        variant='filled'
+        rows={15}
+        fullWidth
+        disabled
+        {...props}
+    />
+  
+  </>
+}
+
+
 
 const GridItem = styled.div`
 width: 100%;
@@ -80,16 +75,16 @@ flex-direction: column;
 `
 
 const Container = styled.div`
-width: 100%;
+max-width: 100vw;
 min-height: 100vh;
-
 display: flex;
-justify-content: center;
+flex-direction: column;
+justify-content: space-around;
 `
 const Grid = styled.div`
-width: 100%;
+width: calc(100% - 6em);
 padding: 0 3em;
-margin-top: 5em;
+//margin-top: 5em;
 display: grid;
 
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
