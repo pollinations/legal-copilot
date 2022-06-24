@@ -9,7 +9,7 @@ const Footer = () => {
             legalese <span>translation</span> using AI.
         </Typography>
         <Typography variant='h6'>
-            Made with <span>Pollinations</span>
+            Made with <a target="_blank" href='https://pollinations.ai'>Pollinations</a>
         </Typography>
     </TextContainer>
 }
@@ -19,7 +19,7 @@ text-align: center;
 font-weight: bold;
 h2 {
     span {
-        color: #d45028 !important;
+        color: lavender !important;
 }
 }
 
