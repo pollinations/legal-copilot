@@ -1,0 +1,17 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+
+body {
+  /* set the color of the text to match the nice background gradient */
+  color:rgb(81, 81, 81);
+  background-color: darkgray;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
