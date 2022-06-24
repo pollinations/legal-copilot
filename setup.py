@@ -8,7 +8,15 @@ setup(
     packages=find_packages(),
     package_data={},
     scripts=[],
-    install_requires=["click", "fastapi", "uvicorn", "openai", "python-dotenv"],
+    install_requires=[
+        "click",
+        "fastapi",
+        "uvicorn",
+        "openai",
+        "python-dotenv",
+        "langdetect",
+        "textract",
+    ],
     extras_require={
         "test": ["pytest", "pylint!=2.5.0", "black", "mypy", "flake8", "pytest-cov"],
     },

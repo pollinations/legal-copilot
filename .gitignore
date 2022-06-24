@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python
 data/
+legal_copilot/bla.py
 .env
 ### Python ###
 # Byte-compiled / optimized / DLL files
