@@ -22,7 +22,7 @@ function App() {
     <Container>
       <Grid>
         <GridItem>
-          <Typography variant='h4' children='your legal nonsense:'/>
+          <Typography variant='h4' children='legal nonsense:'/>
           <TextField
             id="legalese-text"
             autoFocus
@@ -40,7 +40,7 @@ function App() {
             onClick={onSubmit}/>
         </GridItem>
         <GridItem>
-          <EmptyItem title={<>what does it <i>actually</i> means:</>} value={translated_text}/>
+          <EmptyItem title={<>what does it mean:</>} value={translated_text}/>
         </GridItem>         
       </Grid>
       <Footer/>
