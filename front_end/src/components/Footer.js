@@ -3,7 +3,8 @@ import Typography from "@mui/material/Typography"
 
 const Footer = () => <TextContainer>
     <Typography variant='h6'>
-        Made with <a target="_blank" href='https://pollinations.ai'>Pollinations</a>
+        Made with <a target="_blank" href='https://pollinations.ai' rel="noreferrer">
+        Pollinations</a>
     </Typography>
 </TextContainer>
 
