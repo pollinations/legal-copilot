@@ -11,6 +11,9 @@ const Footer = () => <TextContainer>
 const TextContainer = styled.div`
 text-align: center;
 margin-top: 1.5em;
+h6 {
+    font-size: 1.2em;
+}
 `
 
 export default Footer

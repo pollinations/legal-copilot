@@ -14,7 +14,8 @@ justify-content: space-between;
 text-align: left;
 padding: 0 1em;
 margin-bottom: 1em;
-img{
+
+img {
   width: 100px;
   height: 100px;
   aspect-ratio: 1;

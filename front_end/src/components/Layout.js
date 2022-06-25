@@ -1,18 +1,22 @@
 import styled from '@emotion/styled'
 
 const Layout = props => <Container>
+    {/* Header */}
     {props.children[0]}
     <Grid>
 
         <GridItem>
+        {/* Grid Item 01 */}
         {props.children[1]}
         </GridItem>
 
         <GridItem>
+        {/* Grid Item 02 */}
         {props.children[2]}
         </GridItem>    
             
     </Grid>
+    {/* Footer */}
     {props.children[3]}
 </Container>
 

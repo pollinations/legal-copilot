@@ -2,27 +2,26 @@ import { Button, CircularProgress, TextField, Typography } from "@mui/material"
 
 const TextArea = props => {
 
-
-
+    const { input, loading, onSubmit, title } = props;
 
     return <>
-        <Typography variant='h4' children={props.title}/>
+        <Typography variant='h4' children={title}/>
         <TextField
-            id={props.title}
-            autoFocus
-            multiline
-            variant='filled'
-            rows={15}
-            fullWidth
-            disabled={props.loading}
-            {...props.input}/>
+        id={title}
+        autoFocus
+        multiline
+        variant='filled'
+        rows={15}
+        fullWidth
+        disabled={loading}
+        {...input}/>
 
-          <Button 
-          variant='outlined' 
-          endIcon={props.loading && <CircularProgress size={20} />}
-          children={!props.loading ? 'translate' : 'decoding' }
-          disabled={props.loading}
-          onClick={props.onSubmit}/>
+        <Button 
+        variant='outlined' 
+        endIcon={loading && <CircularProgress size={20} />}
+        children={!loading ? 'translate' : 'decoding' }
+        disabled={loading}
+        onClick={onSubmit}/>
     </>
 }
 
