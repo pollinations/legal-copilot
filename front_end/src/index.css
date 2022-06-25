@@ -2,17 +2,17 @@
 
 /* select all and set font-weight: 800 */
 * {
-  /* font-weight: 800; */
-  color: #f8f8fb !important;
+  font-weight: 800;
+  color: black !important;
 }
 
 textarea:disabled {
-  -webkit-text-fill-color: #f8f8fb !important;
+  -webkit-text-fill-color: black !important;
 }
 body {
   /* set the color of the text to match the nice background gradient */
   color:#f8f8fb;
-  background-color: #29375b;
+  background-color: #f2f0ee;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
